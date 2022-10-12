@@ -1,9 +1,34 @@
 /* **********************************************
-Basic mechanics
-Hide all paragraphs by default
-Show them when they receive the class 'on'
-Hide them when they receive the class 'off'
-Feel free to adjust the defaults to your needs.
+Basic layout.
+*********************************************  */
+
+body {
+	display: grid;
+	height: 100vh;
+	margin: 0;
+	justify-content: center;
+	background: linear-gradient(-45deg, #2E575C, #0A0E11, #131D20, #2F3E43);
+	background-size: 400% 400%;
+}
+#video-container {
+	margin: auto;
+}
+#video-mask {
+	aspect-ratio: 240.5/100;
+	display: grid;
+	overflow: hidden;
+	align-content: center;
+	transition: 1s;
+}
+
+iframe {
+	width: 80vw;
+	height: 53.33333333vw;
+	margin-top: -0.35vw;
+}
+
+/* **********************************************
+Show and hide paragraphs with classes on and off.
 ********************************************** */
 #closed-captions p {
 	opacity: 0;
@@ -17,24 +42,30 @@ Feel free to adjust the defaults to your needs.
 	transition: .2s;
 	opacity: 0;
 }
+
+/* **********************************************
+Voices
+********************************************** */
 .voice1 {
-	font-style: italic;
+	font-family: "brenner mono";
 }
 .voice2 {
-	font-weight: bold;
+	font-family: "brenner sans";
+	font-weight: 600;
+}
+.voice3 {
+	font-family: "brenner sans condensed MePbYqy";
+	/* font-size: 2em; */
+}
+.voice4 {
+	font-family: "brenner slab";
 }
 
 /* **********************************************
-The first paragraph, with extended timing for 
-	all siblings. Basically what it does is that
-	it shows the text after a delay, which 
-	corresponds with the time that the word is
-	spoken.
-You probably want to change the styling.
+Paragraphs
 ********************************************** */
 .p0 span {
 	opacity: 0;
-	font-family: brenner;
 }
 .p0.on span:first-of-type {
 	opacity: 1;
@@ -63,89 +94,218 @@ You probably want to change the styling.
 	opacity: 1;
 	transition: 0s 1.1s;
 	margin-right: -.25em;
-	font-family: "brenner sans";
 }
 .p0.on span:nth-of-type(6) {
 	opacity: 1;
 	transition: 0s 1.4s;
 	margin-right: -.25em;
-	font-family: "brenner display";
 }
 .p0.on span:nth-of-type(7) {
 	opacity: 1;
 	transition: 0s 1.7s;
 	margin-right: -.25em;
-	font-family: "brenner script";
 }
 .p0.on span:nth-of-type(8) {
 	opacity: 1;
 	transition: 0s 2s;
-	font-family: "brenner script";
 }
 .p0.on span:nth-of-type(9) {
 	opacity: 1;
 	transition: 0s 3s;
-	font-family: "brenner Sans condensed";
 }
 .p0.on span:nth-of-type(10) {
 	opacity: 1;
 	transition: 0s 3.2s;
-	font-family: "brenner mono";
 }
 .p0.on span:nth-of-type(11) {
 	opacity: 1;
 	transition: 0s 3.7s;
-	font-family: "brenner slab";
+}
+.p1.on {
+	/* background: hotpink;
+	color: red;
+	font-size: 40px; */
+}
+.p6.on span:nth-of-type(1),
+.p6.on span:nth-of-type(2) {
+	/* text-transform: uppercase; */
+	font-family: "brenner display black";
 }
 
-.p1.on {
-	background: hotpink;
-	color: red;
-	font-size: 200px;
-}
 
 /* **********************************************
-Sounds.
-	You can style the whole body, or you can 
-	style anything within the body the moment
-	a sound starts.
+Sounds
 *********************************************  */
 
 /* The moment the class .sound1 is added to the body, the background is yellow */
-.sound1 {
-	background-color: lightcoral;
+.sound0 {
+	background: linear-gradient(-45deg, #2E575C, #0A0E11, #131D20, #2F3E43);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+	color: #fff;
 }
 
-/* The moment the class .sound1 is added to the body, the movie makes a turn */
+.sound1, .sound2, .sound3, .sound4 {
+	color: #fff;
+}
+
 .sound1 #video-mask {
-	
+	animation: alarm 2s;
 }
 
+.sound2 #video-mask {
+	animation: alarm2 2.3s;
+}
+
+.sound4 #video-mask {
+	animation: alarm3 1.6s;
+}
+
+.sound5 #video-mask {
+	animation-delay: 7s;
+	animation: alarm4 4s;
+}
+
+.sound5 {
+	/* background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(0,0,0,0) 16%, rgba(252,70,107,0) 100%);
+	background-size: 100% 100%;
+	background-position: center;
+	animation: radial-gradient 5s ease infinite;
+	color: inherit; */
+	background: linear-gradient(-45deg, #2E575C, #0A0E11, #131D20, #2F3E43);
+	background-size: 400% 400%;
+	animation: none;
+}
+
+.sound7 #video-mask {
+	animation-delay: 7s;
+	animation: alarm5 3s;
+}
 
 /* **********************************************
-Basic layout.
-	Place the video in the center of the page.
+Keyframes
 *********************************************  */
+@keyframes alarm {
+	0% {
+		box-shadow: 0; 
+	}
+	50% {
+	box-shadow: 0 0 .4rem #fff,
+            	0 0 .4em #fff,
+            	0 0 50rem #ff5500,
+            	0 0 0.9rem #ff5500,
+            	0 0 4.8rem #ff5500,
+            	inset 0 0 50.3rem #ff5500; 
+	}
+	100% {
+		box-shadow: 0; 
+	}
+}
 
-body {
-	display: grid;
-	height: 100vh;
-	margin: 0;
-	justify-content: center;
-}
-#video-container {
-	margin: auto;
-}
-#video-mask {
-	aspect-ratio: 240.5/100;
-	display: grid;
-	overflow: hidden;
-	align-content: center;
-	transition: 1s;
+@keyframes alarm2 {
+	0% {
+		box-shadow: 0; 
+	}
+	50% {
+	box-shadow: 0 0 .5rem #fff,
+            	0 0 .5rem #fff,
+            	0 0 10rem #ff0000,
+            	0 0 0.8rem #ff0000,
+            	0 0 6.8rem #ff0000,
+            	inset 0 0 10.3rem #ff0000; 
+	}
+	100% {
+		box-shadow: 0; 
+	}
 }
 
-iframe {
-	width: 80vw;
-	height: 53.33333333vw;
-	margin-top: -0.35vw;
+@keyframes alarm3 {
+	0% {
+		box-shadow: 0; 
+	}
+	50% {
+	box-shadow: 0 0 .5rem #fff,
+            	0 0 .5rem #fff,
+            	0 0 30rem #fff700,
+            	0 0 0.8rem #fff700,
+            	0 0 10.8rem #fff700,
+            	inset 0 0 20.3rem #fff700; 
+	}
+	100% {
+		box-shadow: 0; 
+	}
 }
+
+@keyframes alarm4 {
+	0% {
+		box-shadow: 0; 
+	}
+	40% {
+		box-shadow: 0 0 .5rem #fff,
+            	0 0 .5rem #fff,
+            	0 0 50rem #ff5500,
+            	0 0 0.8rem #ff5500,
+            	0 0 20.8rem #ff5500,
+            	inset 0 0 50.3rem #ff5500; 
+	}
+	60% {
+	box-shadow: 0 0 .5rem #fff,
+            	0 0 .5rem #fff,
+            	0 0 50rem #fff700,
+            	0 0 0.8rem #fff700,
+            	0 0 20.8rem #fff700,
+            	inset 0 0 50.3rem #fff700; 
+	}
+	100% {
+		box-shadow: 0; 
+	}
+}
+
+@keyframes alarm5 {
+	0% {
+		box-shadow: 0; 
+	}
+	40% {
+		box-shadow: 0 0 .5rem #fff,
+            	0 0 .5rem #fff,
+            	0 0 50rem #ff5500,
+            	0 0 0.8rem #ff5500,
+            	0 0 20.8rem #ff5500,
+            	inset 0 0 50.3rem #ff5500; 
+	}
+	50% {
+	box-shadow: 0 0 .5rem #fff,
+            	0 0 .5rem #fff,
+            	0 0 50rem #fff700,
+            	0 0 0.8rem #fff700,
+            	0 0 20.8rem #fff700,
+            	inset 0 0 50.3rem #fff700; 
+	}
+	100% {
+		box-shadow: 0; 
+	}
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/* @keyframes radial-gradient {
+	0% {
+		background-size: 100% 100%;
+	}
+	50% {
+		background-size: 2000% 2000%;
+	}
+	100% {
+		background-size: 100% 100%;
+	}
+} */
