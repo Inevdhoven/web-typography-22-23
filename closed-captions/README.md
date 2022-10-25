@@ -64,6 +64,18 @@ Man die aan het einde komt van het soort van napraten:
 De man die Agent K een bonus geeft en zegt dat hij dat hij het niet heeft gehaald, krijgt het font Brenner Slab. Hiervoor heb ik gekozen, omdat hij een wat zwaardere stem heeft en de stem ook uit de speaker komt en dit font een beetje lijkt op het mono font maar toch anders is.
 
 
+## Mijn ideeën
+
+Na het kijken van de film heb ik verschillende ideeën op gedaan. Dit zijn de ideeën die ik heb voor het toevoegen van effecten en animaties:
+
+- Neon (in de film zag ik veel neon signs)
+- Glitch (in de film kwamen hologrammen voor die af en toe een glitch hadden)
+- Gradients
+- Tekst groter en kleiner maken
+- In en uit zomen van het beeld
+- Tekst kleur geven per persoon
+
+
 ## Effecten toevoegen
 
 Toen werd het tijd om te gaan beginnen met het toevoegen van effecten. Voordat ik hieraan begon had ik thuis de film gekeken om zo meer te begrijpen waar de fragmenten over gaan en inspiratie op te doen voor de effecten. Zo zag ik in de film dat er veel gebruik werd gemaakt van neon signs en hologrammen. Dus dit ga ik proberen een beetje terug te laten komen in de fragmenten.
@@ -87,6 +99,16 @@ Nadat ik het eerste deel van de video zo ongeveer had als ik zou willen ben ik v
 Het tweede deel vond ik erg lastig om iets goed voor te bedenken, om goed te laten weergeven wat er met het geluid gebeurd. Aan het begin van het tweede deel is er een opbouwend geluid hier had ik bedacht dat de video steeds groter werd en naar je toe komt. Wanneer er meerdere hardere geluiden achter elkaar kwamen had ik dat de video steeds opnieuw inzoomt. Dit vond ik alleen nog een beetje saai en dat kreeg ik ook te horen in de feedback. Dus ik moest nog beter gaan luisteren naar wat je precies allemaal hoort en kijken hoe ik dat allemaal kon overbrengen. Ik hoorde dat er ook weer een soort piep geluid op de achtergrond was die eerst zachter was en naar het einde meer opbouwde. Daarom heb ik het trillen terug laten komen, maar dan van boven naar beneden. Onder de andere harde spannende geluiden hoorde je het een deel niet, daar heb ik het trillen dan ook weggelaten. Op het einde heb ik ervoor gekozen omdat hij de test niet haalt dat de video uitzoomt en dus kleiner wordt, om het idee te weergeven dat het stil word en dat dit het einde is.
 
 
-### Meer feedback
+### Feedback
 
 Naast dat ik feedback had gekregen op het tweede deel heb ik ook feedback op het eerste deel gekregen. Hier moest ik nog even kijken naar het trillen bij de steeds harder wordende piep, omdat deze steeds bij het overgaan naar een sneller gaande animatie haperde. Hier ben ik een poosje mee bezig geweest maar het is helaas nog niet gelukt om dit op te lossen. Ik heb geprobeerd de procenten aan te passen om deze zo vloeiender in elkaar over te laten lopen. Dan het ik ook doormiddel van de sounds aan te passen geprobeerd om de animatie precies te laten eindigen waar de nieuwe animatie begint, maar dit is nog niet helemaal gelukt helaas. Hier ga ik later nog aan verder.
+
+## De puntjes op de i
+
+Om ervoor te zorgen dat bij het tweede deel het schalen en bewegen te laten werken had ik de tip gekregen om scale te gebruiken. Dit werkt het zelfde als de scale van transform maar in nu los, waardoor het samenwerkt met de transform translateY. Nu werkt het tweede deel van de video ook en schaalt en beweegt het fragment nu smooth. 
+
+Daarna ben ik gaan kijken naar hoe ik ervoor moest zorgen dat de tril animatie van niet meer zou haperen. Hier had ik verschillende dingen voor geprobeerd. Het eerste deel lag aan dat ik de procenten en transforms in de keyframes niet goed had staan. 0% moest op -1em en 100% op 1em en niet 0% op 0, 33% op -1em, 66% op 1em en 100% op 0. Doordat ik vier stappen had ging hij steeds een soort stopje maken wat niet de bedoeling was. Om de animatie geheel goed te laten lopen hebben we er nog animation-direction: alternate; en animation-delay: -0.6s; opgezet. Nu zit er alleen nog tussen de animaties een hapering. Hier heb ik vanalles voor geprobeerd maar het is helaas nog niet gelukt om dit op te lossen. Zo heb ik op verschillende manier proberen uit te rekenen om erachter te komen op welk tijdstip precies de animatie moet beginnen ook door animation delays toe te voegen, maar helaas ben ik nog niet op het juiste antwoord gekomen.
+
+## Het eindresultaat
+
+Ik heb uiteindelijk erg blij met het eindresultaat. Ik heb veel geleerd op het gebied van animaties. Hier heb ik namelijk nog helemaal niet echt veel mee gedaan de afgelopen jaren. Zo nu en dan kleine dingen maar nooit een hele opdracht. Daarom vind ik het erg leuk dat dit een opdracht was waar je dat veel kon gebruiken. Naast dat ik meer heb geleerd over het maken van animaties met css heb ik ook veel geleerd op het gebied van goed luisteren naar de verschillende geluiden die in de video voor komen. Als laatste heb ik ook geleerd om goed te luisteren naar de stemmen van verschillende mensen en hoe zij bepaalde dingen zeggen en dat dat ook belangrijk is om proberen over te brengen.
