@@ -344,6 +344,10 @@ Sounds
 	animation: alarm2 2.3s;
 }
 
+.sound3 #video-mask {
+	animation: alarm25 3s;
+}
+
 .sound4 #video-mask {
 	animation: alarm3 1.6s;
 }
@@ -372,26 +376,33 @@ Sounds
 .sound8 #video-mask {
 	animation: ruis 1.2s infinite;
 	animation-timing-function: linear;
+	animation-direction: alternate;
+	animation-delay: -0.6s;
 }
 
 .sound9 #video-mask {
-	animation: ruis 1.0s infinite;
-	animation-timing-function: linear;
+	animation-duration: 1s;
+	animation-delay: -0.5s;
 }
 
 .sound10 #video-mask {
 	animation: ruis 0.8s infinite;
 	animation-timing-function: linear;
+	animation-direction: alternate;
+	animation-delay: -0.4s;
 }
 
 .sound11 #video-mask {
 	animation: ruis 0.5s infinite;
 	animation-timing-function: linear;
+	animation-direction: alternate;
+	animation-delay: -0.25s;
 }
 
 .sound12 #video-mask {
 	animation: ruis 0.1s infinite;
 	animation-timing-function: linear;
+	animation-direction: alternate;
 }
 
 /* .sound8 .voice1, .sound8 .voice2 {
@@ -603,12 +614,29 @@ Keyframes
 	}
 }
 
+@keyframes alarm25 {
+	0% {
+		box-shadow: 0; 
+	}
+	50% {
+		box-shadow: 0 0 .5rem #fff,
+            	0 0 .5rem #fff,
+            	0 0 50rem #ff5500,
+            	0 0 0.8rem #ff5500,
+            	0 0 20.8rem #ff5500,
+            	inset 0 0 50.3rem #ff5500;
+	}
+	100% {
+		box-shadow: 0; 
+	}
+}
+
 @keyframes alarm3 {
 	0% {
 		box-shadow: 0; 
 	}
 	50% {
-	box-shadow: 0 0 .5rem #fff,
+		box-shadow: 0 0 .5rem #fff,
             	0 0 .5rem #fff,
             	0 0 30rem #fff700,
             	0 0 0.8rem #fff700,
@@ -705,20 +733,14 @@ Keyframes
 		transform: translateX(0);
 	} */
 	0% {
-		transform: translateX(0);
-	}
-	33% {
 		transform: translateX(-1em);
 	}
-	66% {
-		transform: translateX(1em);
-	}
 	100% {
-		transform: translateX(0);
+		transform: translateX(1em);
 	}
 }
 
-@keyframes ruis1 {
+/* @keyframes ruis1 {
 	0% {
 		transform: translateX(0);
 	}
@@ -776,7 +798,7 @@ Keyframes
 	100% {
 		transform: translateX(0);
 	}
-}
+} */
 
 @keyframes confetti {
 	0% {
@@ -1034,11 +1056,13 @@ Keyframes
 		box-shadow: none;
 	}
 	65% {
-		transform: scale(1) translateY(0);
+		transform: scale(1.2) translateY(0);
 	}
-	/* 70% {
-		transform: translateY(0.3em);
+	 70% {
+		/* transform: translateY(0.3em); */
+		transform: scale(1);
 	}
+	/*
 	75% {
 		transform: translateY(-0.3em);
 	}
@@ -1060,7 +1084,111 @@ Keyframes
 		transform: scale(1);
 	}
 	100% {
-		transform: scale(1) translateY(0);
+		transform: scale(1);
+	}
+}
+
+@keyframes zoom {
+	0% {
+		transform: translateY(0);
+		scale: 1;
+	}
+	5% {
+		transform: translateY(-0.3em); 
+	}
+	10% {
+		transform: translateY(0.3em);
+	}
+	15% {
+		transform: translateY(-0.3em);
+	}
+	20% {
+		transform: translateY(0.3em);
+	}
+	25% {
+		transform: translateY(-0.3em);
+	}
+	30% {
+		transform: translateY(0.3em);
+	}
+	35% {
+		transform: translateY(-0.3em);
+	}
+	40% {
+		transform: translateY(0.3em);
+	}
+	45% {
+		transform: translateY(-0.3em);
+	}
+	50% {
+		transform: translateY(0.3em);
+	}
+	55% {
+		transform: translateY(-0.3em);
+	}
+	60% {
+		transform: translateY(0.3em);
+		scale: 1.2;
+	}
+	61% {
+		box-shadow: none;
+	}
+	61.5% {
+		/* opacity: 1; */
+		box-shadow: 0 0 .5rem #fff,
+            	0 0 .5rem #fff,
+            	0 0 50rem #fff700,
+            	0 0 0.8rem #fff700,
+            	0 0 20.8rem #fff700,
+            	inset 0 0 50.3rem #fff700; 
+	}
+	62% {
+		/* opacity: 0; */
+		box-shadow: none; 
+	}
+	62.5% {
+		/* opacity: 1; */
+		box-shadow: 0 0 .5rem #fff,
+            	0 0 .5rem #fff,
+            	0 0 50rem #fff700,
+            	0 0 0.8rem #fff700,
+            	0 0 20.8rem #fff700,
+            	inset 0 0 50.3rem #fff700; 
+	}
+	63% {
+		box-shadow: none;
+	}
+	65% {
+		transform: translateY(0);
+		scale: 1.2;
+	}
+	 75% {
+		/* transform: translateY(0.3em); */
+		scale: 1;
+	}
+	/*
+	75% {
+		transform: translateY(-0.3em);
+	}
+	80% {
+		transform: translateY(0.3em);
+	}
+	85% {
+		transform: translateY(-0.3em);
+	} */
+	/* 90% { */
+		/* transform: translateY(0.3em); */
+		/* transform: scale(1.2);
+	} */
+	90% {
+		/* transform: translateY(-0.3em); */
+		scale: 1.1;
+	}
+	97% {
+		scale: 1;
+	}
+	100% {
+		scale: 1;
 	}
 }
 
